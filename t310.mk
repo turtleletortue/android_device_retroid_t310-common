@@ -63,10 +63,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libdrm 
 
-# fastbootd
+# fastbootd & recovery
 PRODUCT_PACKAGES += \
     fastbootd \
-    libhardware.recovery
+    libhardware.recovery \
+    android.hardware.boot@1.1-impl.recovery \
+    android.hardware.fastboot@1.0-impl-mock.recovery
 
 # Misc.
 PRODUCT_PACKAGES += \
