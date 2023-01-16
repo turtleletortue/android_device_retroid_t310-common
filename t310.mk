@@ -102,7 +102,11 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libbinderwrapper
+    libhidltransport.vendor \
+    libbinderwrapper \
+    libbinderwrapper.vendor \
+    libhwc2on1adapter.vendor \
+    libhwbinder.vendor
 
 # Seccomp
 PRODUCT_COPY_FILES += \
