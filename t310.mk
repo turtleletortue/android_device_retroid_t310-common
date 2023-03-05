@@ -115,7 +115,8 @@ PRODUCT_PACKAGES += \
     libbinderwrapper \
     libbinderwrapper.vendor \
     libhwc2on1adapter.vendor \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    libsensorndkbridge
 
 # Seccomp
 PRODUCT_COPY_FILES += \
