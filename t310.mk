@@ -41,7 +41,8 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default \
     libalsautils \
-    tinymix 
+    tinymix \
+    libpolicy-subsystem
 
 # Bluetooth
 PRODUCT_PACKAGES += \
