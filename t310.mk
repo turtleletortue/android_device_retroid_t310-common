@@ -116,7 +116,7 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libbinderwrapper \
     libbinderwrapper.vendor \
-    libhwc2on1adapter.vendor \
+    libhwc2on1adapter \
     libhwbinder.vendor \
     libsensorndkbridge
 
