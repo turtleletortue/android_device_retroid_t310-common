@@ -100,6 +100,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     thermal.default
 
+# Trusty
+PRODUCT_PACKAGES += \
+    libtrusty.vendor
+
 # Update Engine
 PRODUCT_PACKAGES += \
     update_engine \
