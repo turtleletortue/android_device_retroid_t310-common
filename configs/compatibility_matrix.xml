@@ -60,9 +60,9 @@
         </interface>
     </hal>
     <vendor-ndk>
-        <version>30</version>
+        <version>32</version>
     </vendor-ndk>
     <system-sdk>
-        <version>30</version>
+        <version>32</version>
     </system-sdk>
 </compatibility-matrix>
