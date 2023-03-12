@@ -68,8 +68,7 @@ PRODUCT_PACKAGES += \
 # fastbootd & recovery
 PRODUCT_PACKAGES += \
     fastbootd \
-    libhardware.recovery \
-    android.hardware.boot@1.1-impl.recovery
+    libhardware.recovery
 
 # Misc.
 PRODUCT_PACKAGES += \
