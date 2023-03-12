@@ -22,6 +22,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
 
+# Fastboot (recovery)
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl-mock
+
 # Gatekeeper (software)
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service.software
