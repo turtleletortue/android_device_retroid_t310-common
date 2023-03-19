@@ -82,13 +82,13 @@ PRODUCT_PACKAGES += \
     gps.default
 
 # Keymaster libraries
-PRODUCT_PACKAGES += \
-    libkeymaster4.vendor \
-    libkeymaster4_1support.vendor \
-    libkeymaster4support.vendor \
-    libkeymaster41.vendor \
-    libkeymaster_messages.vendor \
-    libpuresoftkeymasterdevice.vendor
+#PRODUCT_PACKAGES += \
+#    libkeymaster4.vendor \
+#    libkeymaster4_1support.vendor \
+#    libkeymaster4support.vendor \
+#    libkeymaster41.vendor \
+#    libkeymaster_messages.vendor \
+#    libpuresoftkeymasterdevice.vendor
 
 # Rild
 PRODUCT_PACKAGES += \
@@ -99,8 +99,8 @@ PRODUCT_PACKAGES += \
     thermal.default
 
 # Trusty
-PRODUCT_PACKAGES += \
-    libtrusty.vendor
+#PRODUCT_PACKAGES += \
+#    libtrusty.vendor
 
 # Update Engine
 PRODUCT_PACKAGES += \

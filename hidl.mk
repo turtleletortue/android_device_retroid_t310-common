@@ -31,8 +31,8 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock
 
 # Gatekeeper (software)
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-service.software
+#PRODUCT_PACKAGES += \
+#    android.hardware.gatekeeper@1.0-service.software
 
 # Gnss
 PRODUCT_PACKAGES += \
@@ -48,8 +48,8 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1-service
+#PRODUCT_PACKAGES += \
+#    android.hardware.keymaster@4.1-service
 
 # Memtrack
 PRODUCT_PACKAGES += \
