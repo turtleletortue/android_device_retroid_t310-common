@@ -111,13 +111,13 @@
     <!-- route declaration, i.e. list all available sources for a given sink -->
     <routes>
         <route type="mix" sink="Earpiece"
-               sources="primary output,compressed_offload"/>
+               sources="primary output"/>
         <route type="mix" sink="Speaker"
-               sources="primary output,compressed_offload"/>
+               sources="primary output"/>
         <route type="mix" sink="Wired Headset"
-               sources="primary output,compressed_offload"/>
+               sources="primary output"/>
         <route type="mix" sink="Wired Headphones"
-               sources="primary output,compressed_offload"/>
+               sources="primary output"/>
         <route type="mix" sink="BT SCO"
                sources="primary output"/>
         <route type="mix" sink="BT SCO Headset"
@@ -131,9 +131,9 @@
         <route type="mix" sink="fm input"
                sources="Fm Record Device"/>
         <route type="mix" sink="USB Device Out"
-               sources="primary output,compressed_offload"/>
+               sources="primary output"/>
         <route type="mix" sink="USB Headset Out"
-               sources="primary output,compressed_offload"/>
+               sources="primary output"/>
         <route type="mix" sink="Telephony Tx"
                sources="voice_tx"/>
     </routes>
