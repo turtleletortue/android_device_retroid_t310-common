@@ -122,6 +122,35 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     libsensorndkbridge
 
+# Audio configuration
+PRODUCT_COPY_FILES += \
+    device/retroid/t310-common/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/a2dp_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_configuration_a2dp_offload_disabled.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_configuration_bluetooth_legacy_hal.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration_smart_pa.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_configuration_smart_pa.xml \
+    device/retroid/t310-common/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_volumes.xml \
+    device/retroid/t310-common/audio/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/bluetooth_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/bluetooth_audio_policy_configuration_disable_offload.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/bluetooth_audio_policy_configuration_disable_offload.xml \
+    device/retroid/t310-common/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/default_volume_tables.xml \
+    device/retroid/t310-common/audio/primary_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/primary_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/primary_audio_policy_configuration_smart_pa.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/primary_audio_policy_configuration_smart_pa.xml \
+    device/retroid/t310-common/audio/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/r_submix_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/usb_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
+    device/retroid/t310-common/audio/audio_policy_configuration_smart_pa.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_smart_pa.xml \
+    device/retroid/t310-common/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    device/retroid/t310-common/audio/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/bluetooth_audio_policy_configuration_disable_offload.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_disable_offload.xml \
+    device/retroid/t310-common/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    device/retroid/t310-common/audio/primary_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/primary_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/primary_audio_policy_configuration_smart_pa.xml:$(TARGET_COPY_OUT_VENDOR)/etc/primary_audio_policy_configuration_smart_pa.xml \
+    device/retroid/t310-common/audio/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    device/retroid/t310-common/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml 
+
 # Seccomp
 PRODUCT_COPY_FILES += \
     device/retroid/t310-common/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy 
