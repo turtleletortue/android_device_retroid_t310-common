@@ -162,6 +162,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     sys.usb.controller=musb-hdrc.0.auto \
     persist.vendor.sys.modem.diag=disable
 
+# Bootloader unlock support
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.oem_unlock_supported=1
+
 # t310 Surfaceflinger props
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.vsync_event_phase_offset_ns=1000000 \
