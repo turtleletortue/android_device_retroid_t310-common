@@ -56,7 +56,7 @@ BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 # Super partition
 BOARD_SUPER_PARTITION_SIZE := 6446645248
-BOARD_RETROID_DYNAMIC_PARTITIONS_PARTITION_LIST := system product system_ext vendor
+BOARD_RETROID_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
 BOARD_SUPER_PARTITION_GROUPS := retroid_dynamic_partitions
 # Using Virtual A/B OTA, so using more than half of super should be fine
 BOARD_RETROID_DYNAMIC_PARTITIONS_SIZE := 3892244480
