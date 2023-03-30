@@ -103,10 +103,10 @@
     <bool name="config_lidControlsSleep">true</bool>
 
         <!--  Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">5</integer>
+    <integer name="config_multiuserMaximumUsers">1</integer>
 
     <!--  Whether Multiuser UI should be shown -->
-    <bool name="config_enableMultiUserUI">true</bool>
+    <bool name="config_enableMultiUserUI">false</bool>
 
     <!-- Disables double tap to wake the device -->
     <bool name="config_supportDoubleTapWake">false</bool>
