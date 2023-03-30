@@ -74,6 +74,12 @@
                cell broadcasting sms, and MMS. -->
     <bool name="config_sms_capable">false</bool>
 
+    <!-- Flag indicating whether the current device allows data.
+         If true, this means that the device supports data connectivity through
+         the telephony network.
+         This can be overridden to false for devices that support voice and/or sms . -->
+    <bool name="config_mobile_data_capable">false</bool>
+
     <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
     <bool name="config_allowAllRotations">false</bool>
