@@ -172,6 +172,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(COMMON_PATH)/configs/framework_c
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/compatibility_matrix.xml
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay/aosp
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay/lineage
 
 USE_XML_AUDIO_POLICY_CONF := 1
 
