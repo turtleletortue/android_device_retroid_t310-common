@@ -1,8 +1,8 @@
 diff --git a/core/Makefile b/core/Makefile
-index 027df5828..b98bc1b99 100644
+index fc4cbd38e..c6613358a 100644
 --- a/core/Makefile
 +++ b/core/Makefile
-@@ -3473,11 +3473,13 @@ endif # end of AVB for BUILDING_SYSTEM_OTHER_IMAGE
+@@ -3565,11 +3565,13 @@ endif # end of AVB for BUILDING_SYSTEM_OTHER_IMAGE
  
  INTERNAL_AVB_PARTITIONS_IN_CHAINED_VBMETA_IMAGES := \
      $(BOARD_AVB_VBMETA_SYSTEM) \
@@ -17,7 +17,7 @@ index 027df5828..b98bc1b99 100644
  endif
  
  # When building a standalone recovery image for non-A/B devices, recovery image must be self-signed
-@@ -3661,6 +3663,14 @@ ifdef BOARD_AVB_VBMETA_SYSTEM
+@@ -3794,6 +3796,14 @@ ifdef BOARD_AVB_VBMETA_SYSTEM
  $(eval $(call check-and-set-avb-args,vbmeta_system))
  endif
  
@@ -32,7 +32,7 @@ index 027df5828..b98bc1b99 100644
  ifdef BOARD_AVB_VBMETA_VENDOR
  $(eval $(call check-and-set-avb-args,vbmeta_vendor))
  endif
-@@ -3685,6 +3695,8 @@ endif
+@@ -3818,6 +3828,8 @@ endif
  BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --padding_size 4096
  BOARD_AVB_MAKE_VBMETA_SYSTEM_IMAGE_ARGS += --padding_size 4096
  BOARD_AVB_MAKE_VBMETA_VENDOR_IMAGE_ARGS += --padding_size 4096
@@ -41,7 +41,7 @@ index 027df5828..b98bc1b99 100644
  
  ifeq (eng,$(filter eng, $(TARGET_BUILD_VARIANT)))
  # We only need the flag in top-level vbmeta.img.
-@@ -3700,6 +3712,16 @@ BOARD_AVB_MAKE_VBMETA_SYSTEM_IMAGE_ARGS += \
+@@ -3833,6 +3845,16 @@ BOARD_AVB_MAKE_VBMETA_SYSTEM_IMAGE_ARGS += \
      --rollback_index $(BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX)
  endif
  
@@ -58,7 +58,7 @@ index 027df5828..b98bc1b99 100644
  ifdef BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX
  BOARD_AVB_MAKE_VBMETA_VENDOR_IMAGE_ARGS += \
      --rollback_index $(BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX)
-@@ -3737,6 +3759,12 @@ define extract-avb-chain-public-keys
+@@ -3879,6 +3901,12 @@ define extract-avb-chain-public-keys
    $(if $(BOARD_AVB_VBMETA_SYSTEM_KEY_PATH),\
      $(hide) $(AVBTOOL) extract_public_key --key $(BOARD_AVB_VBMETA_SYSTEM_KEY_PATH) \
          --output $(1)/vbmeta_system.avbpubkey)
@@ -71,7 +71,7 @@ index 027df5828..b98bc1b99 100644
    $(if $(BOARD_AVB_VBMETA_VENDOR_KEY_PATH),\
      $(hide) $(AVBTOOL) extract_public_key --key $(BOARD_AVB_VBMETA_VENDOR_KEY_PATH) \
          --output $(1)/vbmeta_vendor.avbpubkey)
-@@ -3775,6 +3803,24 @@ $(INSTALLED_VBMETA_SYSTEMIMAGE_TARGET): \
+@@ -3917,6 +3945,24 @@ $(INSTALLED_VBMETA_SYSTEMIMAGE_TARGET): \
  endif
  endif # BUILDING_SYSTEM_IMAGE
  
@@ -96,7 +96,7 @@ index 027df5828..b98bc1b99 100644
  ifdef BOARD_AVB_VBMETA_VENDOR
  INSTALLED_VBMETA_VENDORIMAGE_TARGET := $(PRODUCT_OUT)/vbmeta_vendor.img
  $(INSTALLED_VBMETA_VENDORIMAGE_TARGET): \
-@@ -3814,8 +3860,12 @@ $(INSTALLED_VBMETAIMAGE_TARGET): \
+@@ -3959,8 +4005,12 @@ $(INSTALLED_VBMETAIMAGE_TARGET): \
  	    $(INSTALLED_CUSTOMIMAGES_TARGET) \
  	    $(INSTALLED_RECOVERYIMAGE_TARGET) \
  	    $(INSTALLED_VBMETA_SYSTEMIMAGE_TARGET) \
@@ -109,7 +109,7 @@ index 027df5828..b98bc1b99 100644
  	    $(BOARD_AVB_VBMETA_VENDOR_KEY_PATH) \
  	    $(BOARD_AVB_KEY_PATH)
  	$(build-vbmetaimage-target)
-@@ -4394,6 +4444,20 @@ ifneq (,$(strip $(BOARD_AVB_VBMETA_SYSTEM)))
+@@ -4619,6 +4669,20 @@ ifneq (,$(strip $(BOARD_AVB_VBMETA_SYSTEM)))
  	$(hide) echo "avb_vbmeta_system_algorithm=$(BOARD_AVB_VBMETA_SYSTEM_ALGORITHM)" >> $@
  	$(hide) echo "avb_vbmeta_system_rollback_index_location=$(BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION)" >> $@
  endif # BOARD_AVB_VBMETA_SYSTEM

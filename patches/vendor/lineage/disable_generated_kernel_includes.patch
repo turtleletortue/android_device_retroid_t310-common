@@ -1,5 +1,5 @@
 diff --git a/build/soong/Android.bp b/build/soong/Android.bp
-index dc07f490..a0f8949a 100644
+index df2466bc..ab946f0a 100644
 --- a/build/soong/Android.bp
 +++ b/build/soong/Android.bp
 @@ -21,25 +21,26 @@ lineage_generator {

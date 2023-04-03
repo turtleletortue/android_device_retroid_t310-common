@@ -1,8 +1,8 @@
 diff --git a/tools/releasetools/add_img_to_target_files.py b/tools/releasetools/add_img_to_target_files.py
-index f58b6978a..3ecc7a0ae 100644
+index babfc7dca..c618531fd 100644
 --- a/tools/releasetools/add_img_to_target_files.py
 +++ b/tools/releasetools/add_img_to_target_files.py
-@@ -908,6 +908,26 @@ def AddImagesToTargetFiles(filename):
+@@ -933,6 +933,26 @@ def AddImagesToTargetFiles(filename):
            if item not in vbmeta_system.split()]
        vbmeta_partitions.append("vbmeta_system")
  
@@ -29,57 +29,46 @@ index f58b6978a..3ecc7a0ae 100644
      vbmeta_vendor = OPTIONS.info_dict.get("avb_vbmeta_vendor", "").strip()
      if vbmeta_vendor:
        banner("vbmeta_vendor")
-@@ -918,8 +938,8 @@ def AddImagesToTargetFiles(filename):
-           if item not in vbmeta_vendor.split()]
-       vbmeta_partitions.append("vbmeta_vendor")
- 
--    banner("vbmeta")
--    AddVBMeta(output_zip, partitions, "vbmeta", vbmeta_partitions)
-+    #banner("vbmeta")
-+    #AddVBMeta(output_zip, partitions, "vbmeta", vbmeta_partitions)
- 
-   if OPTIONS.info_dict.get("use_dynamic_partitions") == "true":
-     banner("super_empty")
 diff --git a/tools/releasetools/common.py b/tools/releasetools/common.py
-index c5758c7f0..e602b5ed4 100644
+index 6e3cd70a8..48ab27b5e 100644
 --- a/tools/releasetools/common.py
 +++ b/tools/releasetools/common.py
-@@ -110,7 +110,7 @@ AVB_PARTITIONS = ('boot', 'dtbo', 'odm', 'product', 'recovery', 'system',
-                   'system_ext', 'vendor', 'vendor_boot')
+@@ -118,7 +118,7 @@ AVB_PARTITIONS = ('boot', 'dtbo', 'odm', 'product', 'pvmfw', 'recovery',
+                   'vendor_dlkm', 'odm_dlkm')
  
  # Chained VBMeta partitions.
 -AVB_VBMETA_PARTITIONS = ('vbmeta_system', 'vbmeta_vendor')
 +AVB_VBMETA_PARTITIONS = ('vbmeta_system', 'vbmeta_system_ext', 'vbmeta_product', 'vbmeta_vendor')
  
  # Partitions that should have their care_map added to META/care_map.pb
- PARTITIONS_WITH_CARE_MAP = ('system', 'vendor', 'product', 'system_ext', 'odm')
+ PARTITIONS_WITH_CARE_MAP = [
 diff --git a/tools/releasetools/ota_from_target_files.py b/tools/releasetools/ota_from_target_files.py
-index 479a8983c..1a3bfd1d8 100755
+index 56b784ddd..43db2a593 100755
 --- a/tools/releasetools/ota_from_target_files.py
 +++ b/tools/releasetools/ota_from_target_files.py
-@@ -287,7 +287,7 @@ RETROFIT_DAP_UNZIP_PATTERN = ['OTA/super_*.img', AB_PARTITIONS]
+@@ -305,7 +305,7 @@ RETROFIT_DAP_UNZIP_PATTERN = ['OTA/super_*.img', AB_PARTITIONS]
  # 'system_other' and bootloader partitions.
  SECONDARY_PAYLOAD_SKIPPED_IMAGES = [
-     'boot', 'dtbo', 'modem', 'odm', 'product', 'radio', 'recovery',
+     'boot', 'dtbo', 'modem', 'odm', 'odm_dlkm', 'product', 'radio', 'recovery',
 -    'system_ext', 'vbmeta', 'vbmeta_system', 'vbmeta_vendor', 'vendor',
 +    'system_ext', 'vbmeta', 'vbmeta_system', 'vbmeta_system_ext', 'vbmeta_product', 'vbmeta_vendor', 'vendor',
      'vendor_boot']
  
  
 diff --git a/tools/releasetools/sign_target_files_apks.py b/tools/releasetools/sign_target_files_apks.py
-index 4eb73dc9d..4a931673e 100755
+index 936ef888d..65b1e3aa2 100755
 --- a/tools/releasetools/sign_target_files_apks.py
 +++ b/tools/releasetools/sign_target_files_apks.py
-@@ -187,6 +187,8 @@ AVB_FOOTER_ARGS_BY_PARTITION = {
-     'vendor_boot' : 'avb_vendor_boot_add_hash_footer_args',
-     'vbmeta' : 'avb_vbmeta_args',
-     'vbmeta_system' : 'avb_vbmeta_system_args',
-+    'vbmeta_system_ext' : 'avb_vbmeta_system_ext_args',
-+    'vbmeta_product' : 'avb_vbmeta_product_args',
-     'vbmeta_vendor' : 'avb_vbmeta_vendor_args',
+@@ -213,6 +213,8 @@ AVB_FOOTER_ARGS_BY_PARTITION = {
+     'vendor_dlkm': "avb_vendor_dlkm_add_hashtree_footer_args",
+     'vbmeta': 'avb_vbmeta_args',
+     'vbmeta_system': 'avb_vbmeta_system_args',
++    'vbmeta_system_ext': 'avb_vbmeta_system_ext_args',
++    'vbmeta_product': 'avb_vbmeta_product_args',
+     'vbmeta_vendor': 'avb_vbmeta_vendor_args',
  }
  
-@@ -1219,6 +1221,18 @@ def main(argv):
+@@ -1279,6 +1281,18 @@ def main(argv):
        OPTIONS.avb_algorithms['vbmeta_system'] = a
      elif o == "--avb_vbmeta_system_extra_args":
        OPTIONS.avb_extra_args['vbmeta_system'] = a
@@ -98,7 +87,7 @@ index 4eb73dc9d..4a931673e 100755
      elif o == "--avb_vbmeta_vendor_key":
        OPTIONS.avb_keys['vbmeta_vendor'] = a
      elif o == "--avb_vbmeta_vendor_algorithm":
-@@ -1280,6 +1294,12 @@ def main(argv):
+@@ -1348,6 +1362,12 @@ def main(argv):
            "avb_vbmeta_system_algorithm=",
            "avb_vbmeta_system_key=",
            "avb_vbmeta_system_extra_args=",
