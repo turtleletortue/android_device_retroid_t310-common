@@ -32,3 +32,6 @@ on boot
     chown cameraserver system /sys/class/devfreq/isp-dvfs/isp_governor/set_hw_dvfs_en
     chmod 660 /sys/class/devfreq/fd-dvfs/fd_governor/set_work_index
     chown cameraserver system /sys/class/devfreq/fd-dvfs/fd_governor/set_work_index
+
+    # Disable serial console
+    setprop init.svc.console stopped
