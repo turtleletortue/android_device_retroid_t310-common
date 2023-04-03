@@ -1,0 +1,13 @@
+diff --git a/recovery_ui/ui.cpp b/recovery_ui/ui.cpp
+index ea992593..fcb4e309 100644
+--- a/recovery_ui/ui.cpp
++++ b/recovery_ui/ui.cpp
+@@ -62,7 +62,7 @@ RecoveryUI::RecoveryUI()
+       brightness_dimmed_(25),
+       brightness_file_(BRIGHTNESS_FILE),
+       max_brightness_file_(MAX_BRIGHTNESS_FILE),
+-      touch_screen_allowed_(true),
++      touch_screen_allowed_(false),
+       fastbootd_logo_enabled_(false),
+       touch_low_threshold_(android::base::GetIntProperty("ro.recovery.ui.touch_low_threshold",
+                                                          kDefaultTouchLowThreshold)),
