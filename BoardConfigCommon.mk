@@ -61,6 +61,11 @@ BOARD_SUPER_PARTITION_GROUPS := retroid_dynamic_partitions
 # Using Virtual A/B OTA, so using more than half of super should be fine
 BOARD_RETROID_DYNAMIC_PARTITIONS_SIZE := 3892244480
 
+# Build superimage for making pac file
+ifeq ($(BUILD_SUPERIMAGE),true)
+BOARD_BUILD_SUPER_IMAGE_BY_DEFAULT := true
+endif
+
 # File system types
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
