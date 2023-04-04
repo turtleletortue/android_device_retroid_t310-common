@@ -99,8 +99,8 @@ PRODUCT_PACKAGES += \
     thermal.default
 
 # Trusty
-#PRODUCT_PACKAGES += \
-#    libtrusty.vendor
+PRODUCT_PACKAGES += \
+    libtrusty.vendor
 
 # Update Engine
 PRODUCT_PACKAGES += \
