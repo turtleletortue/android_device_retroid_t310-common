@@ -135,6 +135,7 @@ PRODUCT_PACKAGES += \
 # Audio configuration
 PRODUCT_COPY_FILES += \
     device/retroid/t310-common/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/a2dp_audio_policy_configuration.xml \
+	device/retroid/t310-common/audio/audio_pcm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_pcm.xml \
     device/retroid/t310-common/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_configuration.xml \
     device/retroid/t310-common/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_configuration_a2dp_offload_disabled.xml \
     device/retroid/t310-common/audio/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/audio_policy_configuration_bluetooth_legacy_hal.xml \
