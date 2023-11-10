@@ -1,0 +1,13 @@
+diff --git a/etc/init.rc b/etc/init.rc
+index 97169fe9..2039c37f 100644
+--- a/etc/init.rc
++++ b/etc/init.rc
+@@ -97,7 +97,7 @@ service charger /system/bin/charger
+     critical
+     seclabel u:r:charger:s0
+ 
+-service recovery /system/bin/recovery
++service recovery /system/bin/sdboot
+     socket recovery stream 422 system system
+     seclabel u:r:recovery:s0
+ 

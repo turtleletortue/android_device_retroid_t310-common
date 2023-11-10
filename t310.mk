@@ -132,6 +132,15 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     libsensorndkbridge
 
+# MicroSD boot scripts
+PRODUCT_COPY_FILES += \
+	device/retroid/t310-common/microsdboot/erasebootrecord:root/system/bin/erasebootrecord \
+	device/retroid/t310-common/microsdboot/sdboot:root/system/bin/sdboot
+
+# No ADB authentication in recovery
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.adb.secure.recovery=0
+
 # Audio configuration
 PRODUCT_COPY_FILES += \
     device/retroid/t310-common/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_sprd/a2dp_audio_policy_configuration.xml \

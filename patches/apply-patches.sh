@@ -4,6 +4,7 @@ cd ../../../../
 # Apply recovery patch
 cd bootable/recovery/
 patch -p1 < ../../device/retroid/t310-common/patches/bootable/recovery/0001-disable_touchscreen_in_recovery.patch
+patch -p1 < ../../device/retroid/t310-common/patches/bootable/recovery/0002-enable-microsd-boot.patch
 cd ../../
 
 # Apply build/make patches (for building vbmeta_product and vbmeta_system_ext and making OTAs work)
