@@ -83,4 +83,4 @@ then
 fi
 
 # Execute the real recovery (to serve as both a fallback and to keep original recovery behavior intact)
-/system/bin/recovery
+/system/bin/recovery "$@"
